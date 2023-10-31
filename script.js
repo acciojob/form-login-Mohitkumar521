@@ -1,16 +1,20 @@
-// Define a function to handle the form submission
+// Get the form element by its ID
+const form = document.getElementById('myForm');
+
+// Function to handle form submission
 function getFormValue(event) {
-    event.preventDefault(); // Prevent the form from submitting in the traditional way
+  // Prevent the form from submitting in the traditional way
+  event.preventDefault();
 
-    // Get the values of First and Last Name from the form
-    var firstName = document.getElementById("firstName").value;
-    var lastName = document.getElementById("lastName").value;
+  // Get the values of the First and Last name input fields
+  const firstName = document.getElementById('firstName').value;
+  const lastName = document.getElementById('lastName').value;
 
-    // Display the values using the alert function
-    alert("First Name: " + firstName + "\nLast Name: " + lastName);
+  // Display the values in an alert
+  alert(`First Name: ${firstName}\nLast Name: ${lastName}`);
 }
 
-// Get a reference to the form element and attach an event listener to it
-var loginForm = document.getElementById("loginForm");
-loginForm.addEventListener("submit", getFormValue);
+// Add an event listener to the form to call the getFormValue() function when submitted
+form.addEventListener('submit', getFormValue);
+
 
